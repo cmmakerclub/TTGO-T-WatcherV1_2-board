@@ -7,6 +7,6 @@ module.exports = {
   website: "http://www.kbpro.org",
   email: "makerasia@gmail.com",
   git: "https://github.com/cmmakerclub/ttgo-t-watcher-v1.2-board/",
-  image: "/static/display.JPG",
+  image: "/static/display.jpg",
   version: "1.0.2",
 };
