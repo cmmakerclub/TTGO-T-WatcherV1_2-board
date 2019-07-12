@@ -1,4 +1,4 @@
-const app = require('electron').remote; 
+const app = require('electron').remote;
 const nativeImage = require('electron').nativeImage;
 const dialog = app.dialog;
 
@@ -38,9 +38,9 @@ module.exports = function(Blockly){
   Blockly.Blocks['i2c128x64_create_image'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("create image from PNG file");      
+          .appendField("create image from PNG file");
       this.appendDummyInput()
-          .appendField(new Blockly.FieldImage("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAABACAIAAABdtOgoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ/SURBVHhe7ZbbdQIxDES3LgraeqiGZiiG2JLWHhmbx08Gkrk/kWU9GR/IdhNUJAAZCUBGApCRAGQkABkJQEYCkJEAZCQAGQlARgKQkQBkJAAZCUBGApCRAGQkABkJQEYCkJEAZCQAGQlARgKQkQBkJACZFwW47Nu2nc7XOP4ZbK9tv8SRgASQAP+bhQDX86k+jYo9jxDgbA+mAG/GH5GDEs393dtLQLNRZL9qTnwHs/oeHpUh18xjfHzvkBAxF/NUirf16DnQts+KsxTiwos7PXZgKkDesxrRweZw20dCGxZe+aHw9bzH33obC9p92A4WhfRF/VTszj+UrkBCxKT4sVfxm+s+8a492pO9GjMB+p6N5OqHHOk96/Ghv18U0pzTSWfdVvVTte5GMwMJKSYVyt2CPAymQbW2iUW3EzIRYMg10gztkGaGi5X/MB3rAOfGMGiqalWW9dPoEJX8CFykoikBxh/m7cUH65W9nKUA0TDAGeCQ3DD1yn/QW+TIORaznU5tu2X91Kk3mUwQwAWEDwmtG3r7CO4NjqFe2cuYfQWlUeA3YFIc/fPx0F+s8PV7s45VF7QVI/tJX7fd9CAMScCFm5OavZl5PcKrD04EJnnI9Ef4GKAC/Y4u6dAjC9Bv7gdvj/VZG5OhIw3XXPVtxeIfGsvx4GVhu3AzWqQE2LePuu/FHJ1Ga/N8r8JCgE8DPoNPI422VHrJdwjgb+mdvX6N/JG/P+g3COA7fubnX8lfNW+O+SVfQX8XCUBGApCRAGQkABkJQEYCkJEAZCQAGQlARgKQkQBkJAAZCUBGApCRAGQkABkJQEYCkJEAZCQAGQlARgKQkQBkJACV2+0HImEfdtax+UEAAAAASUVORK5CYII=", 
+          .appendField(new Blockly.FieldImage("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAABACAIAAABdtOgoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ/SURBVHhe7ZbbdQIxDES3LgraeqiGZiiG2JLWHhmbx08Gkrk/kWU9GR/IdhNUJAAZCUBGApCRAGQkABkJQEYCkJEAZCQAGQlARgKQkQBkJAAZCUBGApCRAGQkABkJQEYCkJEAZCQAGQlARgKQkQBkJACZFwW47Nu2nc7XOP4ZbK9tv8SRgASQAP+bhQDX86k+jYo9jxDgbA+mAG/GH5GDEs393dtLQLNRZL9qTnwHs/oeHpUh18xjfHzvkBAxF/NUirf16DnQts+KsxTiwos7PXZgKkDesxrRweZw20dCGxZe+aHw9bzH33obC9p92A4WhfRF/VTszj+UrkBCxKT4sVfxm+s+8a492pO9GjMB+p6N5OqHHOk96/Ghv18U0pzTSWfdVvVTte5GMwMJKSYVyt2CPAymQbW2iUW3EzIRYMg10gztkGaGi5X/MB3rAOfGMGiqalWW9dPoEJX8CFykoikBxh/m7cUH65W9nKUA0TDAGeCQ3DD1yn/QW+TIORaznU5tu2X91Kk3mUwQwAWEDwmtG3r7CO4NjqFe2cuYfQWlUeA3YFIc/fPx0F+s8PV7s45VF7QVI/tJX7fd9CAMScCFm5OavZl5PcKrD04EJnnI9Ef4GKAC/Y4u6dAjC9Bv7gdvj/VZG5OhIw3XXPVtxeIfGsvx4GVhu3AzWqQE2LePuu/FHJ1Ga/N8r8JCgE8DPoNPI422VHrJdwjgb+mdvX6N/JG/P+g3COA7fubnX8lfNW+O+SVfQX8XCUBGApCRAGQkABkJQEYCkJEAZCQAGQlARgKQkQBkJAAZCUBGApCRAGQkABkJQEYCkJEAZCQAGQlARgKQkQBkJACV2+0HImEfdtax+UEAAAAASUVORK5CYII=",
           128, 64, "click to upload", function(e) {
             let myself = this;
             let id = this.sourceBlock_.id.toUpperCase();
@@ -65,8 +65,8 @@ module.exports = function(Blockly){
                 }
                 var buff = image.getBitmap();
                 //---- dithering image ----//
-                floyd_steinberg(buff,size.width);
-                //---- display image ----//                
+                //floyd_steinberg(buff,size.width);
+                //---- display image ----//
                 myself.sourceBlock_.inputList[2].fieldRow[0].setValue(`image size ${size.width} x ${size.height}`);
                 myself.sourceBlock_.inputList[2].fieldRow[0].init();
                 myself.setValue(image.toDataURL());
@@ -76,7 +76,7 @@ module.exports = function(Blockly){
           }, true));
       this.appendDummyInput().appendField("image size 128 x 64");
 
-      this.setOutput(true, "std::vector<uint8_t>");
+      this.setOutput(true, "std::vector<uint16_t>");
       this.setColour(230);
    this.setTooltip("create image from PNG file (for best quality result please use size within 128x64 pixel otherwise, it'll resize)");
    this.setHelpUrl("");
@@ -86,7 +86,7 @@ module.exports = function(Blockly){
   Blockly.Blocks['i2c128x64_display_image'] = {
     init: function() {
       this.appendValueInput("img")
-          .setCheck("std::vector<uint8_t>")
+          .setCheck("std::vector<uint16_t>")
           .appendField("draw image");
       this.appendValueInput("x")
           .setCheck("Number")
@@ -196,8 +196,8 @@ Blockly.Blocks['tft_display_print'] = {
         this.appendDummyInput()
             .appendField(") font")
             .appendField(new Blockly.FieldDropdown([
-              ["Arial_6x8","1"], 
-              ["Arial_12x16","2"], 
+              ["Arial_6x8","1"],
+              ["Arial_12x16","2"],
               ["Arial_18x24","3"]]),
               "textSize")
         this.appendDummyInput()
@@ -283,7 +283,7 @@ Blockly.Blocks['tft_display_draw_rect'] = {
         .appendField(new Blockly.FieldColour('#000000'), "COLOR")
     this.appendDummyInput()
         .appendField(" fill ")
-        .appendField(new Blockly.FieldCheckbox("FALSE"), "fill");      
+        .appendField(new Blockly.FieldCheckbox("FALSE"), "fill");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
