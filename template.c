@@ -25,10 +25,10 @@ void setup()
   digitalWrite(T4_TFT_BL, HIGH);
 
   tft.begin();
-  tft.setRotation(0);
+  tft.setRotation(3);
   tft.fillScreen(0xFFFF);
   tft.setTextSize(1);
-  
+
   ${SETUP_CODE}
   ${BLOCKSETUP}
 
