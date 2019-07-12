@@ -1,37 +1,10 @@
 const nativeImage = require("electron").nativeImage;
-var createBuffer = function(pixels, width, height) {
-  var depth = 4,
-    pixelsLen = pixels.length,
-    unpackedBuffer = [],
-    threshold = 120;
 
-  var buffer = new Buffer((width * (Math.ceil(height / 8) * 8)) / 8);
-  buffer.fill(0x00);// filter pixels to create monochrome image data
-  for (var i = 0; i < pixelsLen; i += depth) { // just take the red value
-    var pixelVal = pixels[i + 1] = pixels[i + 2] = pixels[i];
-    pixelVal = (pixelVal > threshold)
-      ? 1
-      : 0;
-    unpackedBuffer[i / depth] = pixelVal; // push to unpacked buffer list
-  }
-  for (var x = 0; x < width; x++) {
-    for (var y = 0; y < height; y += 8) {
-      for (var cy = 0; cy < 8; cy++) {
-        var iy = y + cy;
-        if (iy >= height) { break; }
-        buffer[x * Math.ceil(height / 8) +
-        Math.floor(y / 8)] |= unpackedBuffer[iy * width + x] << cy;
-      }
-    }
-  }
-  return buffer;
-};
-
-function hex(arrayBuffer) {
-  return Array.from(new Uint8Array(arrayBuffer))
-    .map(n => n.toString(16).padStart(2, "0"))
-    .join("");
-}
+//function hex(arrayBuffer) {
+//  return Array.from(new Uint8Array(arrayBuffer))
+//    .map(n => n.toString(16).padStart(2, "0"))
+//    .join("");
+//}
 
 module.exports = function(Blockly) {
   "use strict";
@@ -39,7 +12,6 @@ module.exports = function(Blockly) {
     var dataurl = block.inputList[1].fieldRow["0"].src_;
     var image = nativeImage.createFromDataURL(dataurl);
     var size = image.getSize();
-    //var buff = createBuffer(image.getBitmap(), size.width, size.height);
 
     var mm = image.getBitmap();
     var arr = [];
