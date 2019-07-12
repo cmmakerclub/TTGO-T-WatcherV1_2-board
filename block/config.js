@@ -150,8 +150,8 @@ module.exports = {
                          </value>
                      </block>`
         },
-        "i2c128x64_display_clear",
-        "i2c128x64_display_display",
+        // "i2c128x64_display_clear",
+        // "i2c128x64_display_display",
         "tft_display_setRotation",
         "tft_display_fillScreen",
         // 'tft_display_setTextSize',
