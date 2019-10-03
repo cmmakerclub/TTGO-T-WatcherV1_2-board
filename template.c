@@ -31,8 +31,6 @@ void setup()
 
   ${SETUP_CODE}
   ${BLOCKSETUP}
-
-
 }
 void loop()
 {
